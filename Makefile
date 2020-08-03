@@ -2,17 +2,17 @@
 
 log:help
 
-## protos              : Pull protos from Google Repository
+## protos     : Pull protos from Google Repository
 protos:
 	curl -L -O https://github.com/googleapis/googleapis/archive/master.zip
 	unzip master.zip
 	rm -f master.zip
 	mv googleapis-master googleapis
 
-## generate	     : Take the cloned .proto files and generate swift using the protoc plugin 
+## generate   : Take the cloned .proto files and generate swift using the protoc plugin 
 generate:
 	protoc \
-	googleapis/google/cloud/speech/v1/cloud_speech.proto \
+	googleapis/google/cloud/translate/v3/translation_service.proto \
 	googleapis/google/rpc/status.proto \
 	googleapis/google/api/client.proto \
 	googleapis/google/api/annotations.proto \
@@ -25,7 +25,7 @@ generate:
 	mkdir -p Sources/Generated
 	find google/ -name \*.swift -exec cp {} Sources/Generated/ \;
 
-## clean	     : Clean workspace and start from scratch (remove googleapis, generated swift, pods, etc.)
+## clean      : Clean workspace and start from scratch (remove googleapis, generated swift, pods, etc.)
 clean:
 	rm -rf Pods/
 	rm -rf googleapis/
