@@ -8,6 +8,6 @@ target 'TranslateText-gRPC-iOS' do
   use_frameworks!
 
   pod 'SnapKit'
-  pod 'gRPC-Swift', '1.0.0-alpha.17'
+  pod 'gRPC-Swift', '1.0.0-alpha.19'
 
 end

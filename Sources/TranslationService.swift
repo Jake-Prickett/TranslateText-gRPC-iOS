@@ -44,6 +44,7 @@ final class TranslationService {
       $0.source = .content("Hello, my name is Jake")
       $0.parent = "projects/united-rope-274013"
     }
+    
     let call = self.client.detectLanguage(detectLanguageRequest, callOptions: callOptions)
     call.response.whenSuccess { response in
       print("Success -- \(response.languages)")
